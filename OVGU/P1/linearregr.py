@@ -30,7 +30,9 @@ def main():
         print('usage: python3 linearregr.py --data <inputfile> --learningRate <float> --threshold <float>')
         return
     
-    # Read file, setup dataframes and weights
+    file_ = open('output.csv', 'w')
+
+    # Read file, setup dataframes and weights    
     df_ = pd.read_csv(path, header=None)
 
     cols = df_.columns
@@ -52,7 +54,7 @@ def main():
         for i in w:
             w_str+='{0:.4f}'.format(i)+','
         w_str += '{0:.4f}'.format(sse)
-        print(f'{it},{w_str}')
+        file_.write(f'{it},{w_str}\n')
 
         it+=1
         w = iteration(w, df, y, learning_rate) # update weights
@@ -63,8 +65,9 @@ def main():
     for i in w:
         w_str+='{0:.4f}'.format(i)+','
     w_str += '{0:.4f}'.format(sse)
-    print(f'{it},{w_str}')
+    file_.write(f'{it},{w_str}')
 
+    
 
 if __name__ == "__main__":
     main()
