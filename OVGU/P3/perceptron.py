@@ -1,3 +1,16 @@
+'''
+    Machine Learning
+    Programming Assigment 3
+
+    Perceptron
+
+    Alejandro Rodriguez - 229564
+    29.11.2019
+
+    http://wwwiti.cs.uni-magdeburg.de/iti_dke/Lehre/Materialien/WS2019_2020/ML/p_sheet4.pdf
+'''
+
+
 import pandas as pd
 import sys
 
